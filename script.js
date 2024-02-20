@@ -50,9 +50,18 @@ function serverListing(serverIP, name, description, mainImageURL, bannerImageURL
 }
 
 serverListing("https://bloxd.io/?lobby=cypery&g=worlds", "Cypery", "Welcome to Cypery, bloxd.io's premier PvP world. Known for its intense battles and competitive spirit, Cypery stands as the ultimate destination for PvP enthusiasts. Engage in thrilling combat, showcase your strategic skills, and climb the ranks in this adrenaline-fueled arena. Join the best and become a legendary champion of Cypery!", "https://i.imgur.com/0ZhNZSw.png", "https://i.imgur.com/0ZhNZSw.png")
+
+serverListing("https://bloxd.io/?lobby=mesa_pvp&g=worlds", "Mesa PVP", "Explore the mesa in an interactive map and fight to be master of the mesa! Hosted by: Bloxd Events", "https://i.imgur.com/Xmopcoc.png", "https://i.imgur.com/hkEAnMS.png")
+
 serverListing("https://bloxd.io/?lobby=bridgerclutch&g=worlds", "Bridger Clutch", "Bridger Clutch is a server with different Hypixel and Minemen gamemodes like boxing, sumo, fireball fight, the bridge and other more fun gamemodes you can play", "https://i.imgur.com/TXKOXUT.png", "https://i.imgur.com/UD2uxWR.png")
+
+
+
 serverListing("https://bloxd.io/?lobby=ez_y_parkour_3&g=worlds", "Easy Parkour 3", " Welcome to ez_y_parkour_3, a bloxdio server that challenges even the best parkour players. With 100s of hard levels, you make your way through levels, finding secrets and boards to give you an advantage over others.", "https://i.imgur.com/XpdkqFZ.png", "https://i.imgur.com/9cM7DtG.png")
-serverListing("https://bloxd.io/?lobby=professional-pvp&g=worlds", "Professional PVP", "A Diamond FFA PvP server with special kits, 1v1 arenas, and a mega map to explore! You can PvP anyone you like. Hop on today and you might even get tier tested!", "https://i.imgur.com/u6Ogykq.png", "https://i.imgur.com/cinaaEf.png")
-serverListing("https://bloxd.io/?lobby=sdfsdfgsdfgsdfgsfdg&g=worlds", "Test", "This lengthy test paragraph is crafted to serve your testing needs. It's filled with random sentences and phrases, deliberately created to assess the performance and functionality of various systems. Testing is an integral part of the development process, ensuring that software, applications, or systems behave as expected under different conditions. During testing, developers systematically evaluate code, features, and functionalities to identify and address potential issues. This meticulous process contributes to the creation of robust and reliable software solutions.", "birb.png", "birb.png")
+
+serverListing("https://bloxd.io/?lobby=professional-pvp&g=worlds", "Professional PVP", "A Diamond FFA PvP server with special kits, 1v1 arenas, and a mega map to explore! You can PvP anyone you like. Hop on today and you might even get tier tested!", "birb.png", "https://i.imgur.com/cinaaEf.png")
+
+serverListing("https://bloxd.io/?lobby=bridgerclutch&g=worlds", "Test", "This lengthy test paragraph is crafted to serve your testing needs. It's filled with random sentences and phrases, deliberately created to assess the performance and functionality of various systems. Testing is an integral part of the development process, ensuring that software, applications, or systems behave as expected under different conditions. During testing, developers systematically evaluate code, features, and functionalities to identify and address potential issues. This meticulous process contributes to the creation of robust and reliable software solutions.", "birb.png", "birb.png")
+
 
 
