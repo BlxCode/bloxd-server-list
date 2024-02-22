@@ -17,9 +17,9 @@ html {
   transition: .5s;
   margin-bottom: 30px;
 }
-.container:hover {
-  width: 520px;
-  height: 250px;
+.container:hover, .bannerImageDiv {
+  width: 510px;
+  height: 240px;
 }
 
 .playButton {
@@ -35,7 +35,7 @@ html {
   border: none;
   transition: .5s;
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 .playButton:hover {
   background-color: #8fff8f;
@@ -89,9 +89,21 @@ html {
   font-weight: 600;
   font-size: 10px;
   position: fixed;
+  line-break: auto;
   top: 115px;
   color: #ffffff;
   width: 70%;
   left: 15%;
   transform: translateX(-15%);
+}
+
+.playercount {
+    color: #ffffff;
+    left: 74%;
+    top: 91.5%;
+    position: fixed;
+    transform: translate(-80%, -80%);
+    transition: .5s;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
 }
