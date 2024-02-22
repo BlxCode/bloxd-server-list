@@ -1,54 +1,64 @@
-
 let serverAmount = 1;
+let intervalOfPlayerCounterUpdate = 2;// rn its 5 secs
 
 function serverListing(serverIP, name, description, mainImageURL, bannerImageURL) {
 
-  // Create divs and add classes
-  let container = document.createElement("div");
-  container.classList.add("container");
+    // Create divs and add classes
+    let container = document.createElement("div");
+    container.classList.add("container");
 
-  let playButton = document.createElement("div");
-  playButton.textContent = "Play";
-  playButton.style.textAlign = "center";
-  playButton.style.lineHeight = "45px";
-  playButton.onclick = function() {
-    window.location.replace(serverIP);
-  };
+    let playButton = document.createElement("div");
+    playButton.textContent = "Play";
+    playButton.style.textAlign = "center";
+    playButton.style.lineHeight = "45px";
+    playButton.onclick = function () {
+        window.open(serverIP, "_blank");
+    };
 
-  playButton.classList.add("playButton");
+    playButton.classList.add("playButton");
 
-  let descriptionDiv = document.createElement("div");
-  descriptionDiv.textContent = description;
-  descriptionDiv.classList.add("descriptionDiv");
+    let descriptionDiv = document.createElement("div");
+    descriptionDiv.textContent = description;
+    descriptionDiv.classList.add("descriptionDiv");
 
-  let mainImageDiv = document.createElement("div");
-  mainImageDiv.style.backgroundImage = "url(" + mainImageURL + ")";
-  mainImageDiv.classList.add("mainImageDiv");
+    let mainImageDiv = document.createElement("div");
+    mainImageDiv.style.backgroundImage = "url(" + mainImageURL + ")";
+    mainImageDiv.classList.add("mainImageDiv");
 
-  let bannerImageDiv = document.createElement("div");
-  bannerImageDiv.style.backgroundImage = "url('" + bannerImageURL + "')";
-  bannerImageDiv.classList.add("bannerImageDiv");
+    let bannerImageDiv = document.createElement("div");
+    bannerImageDiv.style.backgroundImage = "url('" + bannerImageURL + "')";
+    bannerImageDiv.classList.add("bannerImageDiv");
 
-  let ownerNameDiv = document.createElement("div");
-  ownerNameDiv.classList.add("owerNameDiv");
+    let ownerNameDiv = document.createElement("div");
+    ownerNameDiv.classList.add("owerNameDiv");
 
-  let titleDiv = document.createElement("div");
-  titleDiv.textContent = name;
-  titleDiv.classList.add("titleDiv");
+    let titleDiv = document.createElement("div");
+    titleDiv.textContent = name;
+    titleDiv.classList.add("titleDiv");
 
-  // Append divs
-  document.body.appendChild(container);
-  container.appendChild(playButton);
-  container.appendChild(descriptionDiv);
-  container.appendChild(mainImageDiv);
-  container.appendChild(bannerImageDiv);
-  container.appendChild(ownerNameDiv);
-  container.appendChild(titleDiv);
+    let ipofserver = document.createElement("div");
+    ipofserver.textContent = serverIP;
+    ipofserver.style.display = 'none'
+    ipofserver.classList.add("ipofserver");
 
-  container.style.top = 2 * serverAmount + "px";
-  serverAmount++;
+    let playercount = document.createElement("div");
+    playercount.textContent = 0
+    playercount.classList.add("playercount");
+
+    // Append divs
+    document.body.appendChild(container);
+    container.appendChild(playButton);
+    container.appendChild(descriptionDiv);
+    container.appendChild(mainImageDiv);
+    container.appendChild(bannerImageDiv);
+    container.appendChild(ownerNameDiv);
+    container.appendChild(titleDiv);
+    container.appendChild(ipofserver);
+    container.appendChild(playercount);
+
+    container.style.top = 2 * serverAmount + "px";
+    serverAmount++;
 }
-
 serverListing("https://bloxd.io/?lobby=cypery&g=worlds", "Cypery", "Welcome to Cypery, bloxd.io's premier PvP world. Known for its intense battles and competitive spirit, Cypery stands as the ultimate destination for PvP enthusiasts. Engage in thrilling combat, showcase your strategic skills, and climb the ranks in this adrenaline-fueled arena. Join the best and become a legendary champion of Cypery!", "https://i.imgur.com/0ZhNZSw.png", "https://i.imgur.com/0ZhNZSw.png")
 
 serverListing("https://bloxd.io/?lobby=mesa_pvp&g=worlds", "Mesa PVP", "Explore the mesa in an interactive map and fight to be master of the mesa! Hosted by: Bloxd Events", "https://i.imgur.com/Xmopcoc.png", "https://i.imgur.com/hkEAnMS.png")
@@ -69,3 +79,19 @@ serverListing("https://bloxd.io/?lobby=parkour-spirals2&g=worlds", "Parkour Spir
 serverListing("https://bloxd.io/?lobby=bridgerclutch&g=worlds", "Test", "This lengthy test paragraph is crafted to serve your testing needs. It's filled with random sentences and phrases, deliberately created to assess the performance and functionality of various systems. Testing is an integral part of the development process, ensuring that software, applications, or systems behave as expected under different conditions. During testing, developers systematically evaluate code, features, and functionalities to identify and address potential issues. This meticulous process contributes to the creation of robust and reliable software solutions.", "birb.png", "birb.png")
 
 
+function reloadplayerscount() {
+  fetch('https://matchmaking.bloxd.io/openWorlds').then(d => {
+      d.json().then(dd => {
+          document.querySelectorAll('.container').forEach(element => {
+              dd.forEach(server => {
+                  var lobbyname = new URL(element.getElementsByClassName('ipofserver')[0].textContent)
+                  if (server.name === lobbyname.searchParams.get('lobby')) {
+                      element.getElementsByClassName('playercount')[0].textContent = server.players
+                  }
+              })
+          })
+      })
+  })
+}
+
+setInterval(reloadplayerscount, intervalOfPlayerCounterUpdate)
