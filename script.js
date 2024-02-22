@@ -1,5 +1,4 @@
 let serverAmount = 1;
-let intervalOfPlayerCounterUpdate = 2;// rn its 5 secs
 
 function serverListing(serverIP, name, description, mainImageURL, bannerImageURL) {
 
@@ -94,4 +93,4 @@ function reloadplayerscount() {
   })
 }
 
-setInterval(reloadplayerscount, intervalOfPlayerCounterUpdate)
+reloadplayerscount()
