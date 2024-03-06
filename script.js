@@ -62,7 +62,7 @@ serverListing("https://bloxd.io/?lobby=cypery&g=worlds", "Cypery", "Welcome to C
 
 serverListing("https://bloxd.io/?lobby=mesa_pvp&g=worlds", "Mesa PVP", "Explore the mesa in an interactive map and fight to be master of the mesa! Hosted by: Bloxd Events", "https://i.imgur.com/Xmopcoc.png", "https://i.imgur.com/hkEAnMS.png")
 
-serverListing("https://bloxd.io/?lobby=bridgerclutch&g=worlds", "Bridger Clutch", "Bridger Clutch is a server with different Hypixel and Minemen gamemodes like boxing, sumo, fireball fight, the bridge and other more fun gamemodes you can play", "https://i.imgur.com/TXKOXUT.png", "https://i.imgur.com/UD2uxWR.png")
+serverListing("https://bloxd.io/?lobby=jypixel&g=worlds", "JyPixel", "Jypixel is a server with different Hypixel and Minemen gamemodes like boxing, sumo, fireball fight, the bridge and other more fun gamemodes you can play", "https://i.imgur.com/TXKOXUT.png", "https://i.imgur.com/UD2uxWR.png")
 
 
 
